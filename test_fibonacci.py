@@ -14,4 +14,19 @@ def test_invalid_datatype():
 
 def test_zero_input():
     """Assert input of 0 returns a list containing only 0"""
-    assert fibonacci.Fibonacci(0).list == [0]
+    sequence = []
+    for number in fibonacci.Fibonacci(0):
+        print("number:", number)
+        sequence.append(number)
+    assert sequence == [0]
+
+
+def test_one_input():
+    """Assert input of 1 returns a list containing 0,1 """
+#   for number in fibonacci.Fibonacci(1):
+#        continue
+    sequence = []
+    for number in fibonacci.Fibonacci(1):
+        print("number:", number)
+        sequence.append(number)
+    assert sequence == [0, 1]
