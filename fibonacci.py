@@ -10,9 +10,10 @@ class Fibonacci:
 
     def __init__(self, stop):
         """ Requires a single integer as input."""
-        if int(stop):
-            self.stop = stop
-        raise ValueError
+        if not isinstance(stop, int):
+            raise ValueError
+        self.stop = stop
+        self.list = [stop]
 
     def __iter__(self):
         """Returns the instance object which is an iterator."""
