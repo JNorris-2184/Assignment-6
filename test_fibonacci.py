@@ -33,3 +33,8 @@ def test_one_input():
 def test_two_input():
     """Assert input of 2 returns a list containing 0,1 """
     assert call_fibonacci(2) == [0, 1, 1]
+
+
+def test_four_input():
+    """Assert input of 2 returns a list containing 0,1 """
+    assert call_fibonacci(4) == [0, 1, 1, 2, 3]

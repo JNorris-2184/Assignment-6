@@ -15,7 +15,7 @@ class Fibonacci:
         self.stop = stop    # number of iterations
         self.current = 0    # current number
         self.position = 0   # position in Fibonacci series
-        self.increment = 1  # increment to next value in series
+        self.previous = 0   # previous value in series
 
     def __iter__(self):
         """Returns the instance object which is an iterator."""
@@ -30,8 +30,9 @@ class Fibonacci:
             elif self.position == 1:
                 next_number = 1
             else:
-                self.current += self.increment
-                next_number = self.increment
+                self.previous, self.current = (self.current,
+                                               self.current + self.previous)
+                next_number = self.current
             self.position += 1
             return next_number
         raise StopIteration
