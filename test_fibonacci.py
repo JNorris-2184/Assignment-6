@@ -43,3 +43,8 @@ def test_four_input():
 def test_ten_input():
     """Assert input of 10 returns correct list """
     assert call_fibonacci(10) == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+
+
+def test_negative_input():
+    """Assert negative value input returns an empty list """
+    assert not call_fibonacci(-1)
