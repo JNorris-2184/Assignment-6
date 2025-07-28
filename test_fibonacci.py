@@ -31,10 +31,15 @@ def test_one_input():
 
 
 def test_two_input():
-    """Assert input of 2 returns a list containing 0,1 """
+    """Assert input of 2 returns a list containing 0,1,1 """
     assert call_fibonacci(2) == [0, 1, 1]
 
 
 def test_four_input():
-    """Assert input of 2 returns a list containing 0,1 """
+    """Assert input of 4 returns a list containing 0,1,1,2,3 """
     assert call_fibonacci(4) == [0, 1, 1, 2, 3]
+
+
+def test_ten_input():
+    """Assert input of 10 returns correct list """
+    assert call_fibonacci(10) == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
