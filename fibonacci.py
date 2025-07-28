@@ -12,9 +12,10 @@ class Fibonacci:
         """ Requires a single integer as input."""
         if not isinstance(stop, int):
             raise ValueError
-        self.stop = stop
-        self.current = 0
-        self.sum = 0
+        self.stop = stop    # number of iterations
+        self.current = 0    # current number
+        self.position = 0   # position in Fibonacci series
+        self.increment = 1  # increment to next value in series
 
     def __iter__(self):
         """Returns the instance object which is an iterator."""
@@ -22,9 +23,15 @@ class Fibonacci:
 
     def __next__(self):
         """Defines the instance object as an iterator."""
-        if self.sum <= self.stop:
-            next_number = self.current
-            self.current += 1
-            self.sum += self.current
+        if self.position <= self.stop:
+            if self.position == 0:
+                self.current += 1
+                next_number = 0
+            elif self.position == 1:
+                next_number = 1
+            else:
+                self.current += self.increment
+                next_number = self.increment
+            self.position += 1
             return next_number
         raise StopIteration
